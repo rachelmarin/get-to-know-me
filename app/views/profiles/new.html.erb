@@ -1,0 +1,13 @@
+<h1> Create Profile </h1>
+
+<%= form_for @profile do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :birthdate %>
+        <%= f.date_field :birthdate %>
+    </div>
+    <%= f.submit "Create Profile" %>
+<% end %>
