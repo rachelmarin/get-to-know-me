@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
- before_action :find_profile, only: [:show, :edit, :update ]  
+ before_action :find_profile, only: [:show, :edit, :update, :destroy ]  
 
     def index
     @profiles = Profile.all    
@@ -34,6 +34,11 @@ class ProfilesController < ApplicationController
             render :edit
         end
     end 
+
+        def destroy
+            @profile.destroy
+            redirect_to movies_path           
+        end
 end
 
 
