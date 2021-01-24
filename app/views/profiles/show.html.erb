@@ -8,3 +8,4 @@
     <p>Recomended Tea: <%= @profile.tea %></p>
 
     <%= link_to "Edit", edit_profile_path(@profile) %>
+    <%= link_to "Delete", profile_path(@profile), method: "delete" %>
