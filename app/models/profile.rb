@@ -1,3 +1,3 @@
 class Profile < ApplicationRecord
-    valedates :name, presence: true
+    validates :name, presence: true
 end
