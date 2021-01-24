@@ -1,0 +1,2 @@
+class BirthstonesController < ApplicationController
+end
