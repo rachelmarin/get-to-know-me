@@ -1,33 +1,39 @@
 class ProfilesController < ApplicationController
- before_action :find_profile, only: [:show, :edit, :update, :destroy]  
+ before_action :find_profile, only: [:show, :edit, :update ]  
 
-def index
+    def index
     @profiles = Profile.all    
-end
+    end
 
-def show
+    def show
     
-end
+    end
 
-def new
-   @profile = Profile.new
-end
+    def new
+     @profile = Profile.new
+    end
 
-def create
-    @profile = Profile.new(profile_params)
-    if @profile.save
-        redirect_to profiles_path
-    else
-        render :new
+    def create
+           @profile = Profile.new(profile_params)
+        if @profile.save
+           redirect_to profiles_path
+        else
+           flash.now[:error] = @profile.errors.full_messages
+           render :new
     end
 
     def edit
-        @profile.name = ""
+        # @profile.name = ""
     end
 
     def update
-        
-    end
+        if @profile.update(profile_params)
+           redirect_to profile_path(@profile)
+        else 
+            flash.now[:error] = @profile.errors.full_messages
+            render :edit
+        end
+    end 
 end
 
 
