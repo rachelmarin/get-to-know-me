@@ -2,6 +2,6 @@
 
 <ul> 
 <% @profiles.each do |profile| %>
-    <li><%= link_to profile.name, profiles_path(profile) %></li>
+    <li><%= link_to profile.name, profile_path(profile) %></li>
 <% end %>
 </ul>
