@@ -20,6 +20,14 @@ def create
     else
         render :new
     end
+
+    def edit
+        @profile.name = ""
+    end
+
+    def update
+        
+    end
 end
 
 
