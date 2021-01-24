@@ -17,6 +17,11 @@
         <li><%= link_to("New Profile", new_profile_path) %></li>
       </ul>
     </nav>
+    <% if flash[:error] %>
+      <% flash[:error].each do |error| %>
+        <p><%= error %></p>
+        <% end %>
+      <% end %>
     <%= yield %>
   </body>
 </html>
