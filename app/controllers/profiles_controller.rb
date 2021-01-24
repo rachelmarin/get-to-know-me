@@ -1,8 +1,12 @@
 class ProfilesController < ApplicationController
-# before_action :find_profile, only: [:show, :edit, :update, :destroy]  
+ before_action :find_profile, only: [:show, :edit, :update, :destroy]  
 
 def index
     @profiles = Profile.all    
+end
+
+def show
+    
 end
 
 def new
@@ -19,15 +23,13 @@ def create
 end
 
 
-
-
      private
 
      def profile_params
         params.require(:profile).permit(:name, :birthdate)       
      end
 
-    # def find_profile
-    #     @profile = Profile.find_by_id(params[:id])
-    # end
+     def find_profile
+       @profile = Profile.find_by_id(params[:id])
+     end
 end
