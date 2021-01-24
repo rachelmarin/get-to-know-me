@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
 
         def destroy
             @profile.destroy
-            redirect_to movies_path           
+            redirect_to profile_path           
         end
 end
 
