@@ -22,6 +22,7 @@
         <p><%= error %></p>
         <% end %>
       <% end %>
+      <%= content_tag("p", flash[:notice]) if flash[:notice] %>
     <%= yield %>
   </body>
 </html>
