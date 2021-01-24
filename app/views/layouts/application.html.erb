@@ -9,8 +9,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <nav>
+      <ul> 
+        <li><%= link_to("Home", root_path) %></li>
+        <li><%= link_to("Profile List", profiles_path) %></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
