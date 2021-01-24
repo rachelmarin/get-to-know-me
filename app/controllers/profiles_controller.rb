@@ -37,6 +37,7 @@ class ProfilesController < ApplicationController
 
         def destroy
             @profile.destroy
+            flash[:notice] = "#{@profile.name} was deleted"
             redirect_to profiles_path           
         end
 end
